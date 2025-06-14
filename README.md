@@ -1,4 +1,4 @@
-# NBAStats-JavaFxAssign1-200613627
+# NBA Stat Viewer
 
 ### Built by Zeyn Hirji using IntelliJ, JavaFx, Gluon Scene Builder. 
 #### Student # 200613627
