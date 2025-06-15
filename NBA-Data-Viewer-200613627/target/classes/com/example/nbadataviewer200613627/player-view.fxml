@@ -3,26 +3,29 @@
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<!--suppress JavaFxDefaultTag -->
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nbadataviewer200613627.PlayerView">
+<AnchorPane prefHeight="500" prefWidth="600" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nbadataviewer200613627.PlayerView">
    <children>
       <CheckBox fx:id="pointsPerGame" layoutX="460.0" layoutY="15.0" mnemonicParsing="false" text="Points Per Game" />
       <CheckBox fx:id="assistsPerGame" layoutX="460.0" layoutY="40.0" mnemonicParsing="false" text="Assists Per Game" />
       <CheckBox fx:id="reboundsPerGame" layoutX="460.0" layoutY="65.0" mnemonicParsing="false" text="Rebounds Per Game" />
       <CheckBox fx:id="fgPercentage" layoutX="460.0" layoutY="90.0" mnemonicParsing="false" text="Field Goal %" />
       <CheckBox fx:id="threePtPercentage" layoutX="460.0" layoutY="115.0" mnemonicParsing="false" text="3 Point Field Goal %" />
-      <BarChart fx:id="barChart" prefHeight="400.0" prefWidth="442.0">
+      <BarChart fx:id="barChart" animated="false" prefHeight="500.0" prefWidth="442.0">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis side="BOTTOM" fx:id="xAxis">
+               <tickLabelFont>
+                  <Font name="System Bold" size="8.0" />
+               </tickLabelFont></CategoryAxis>
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis fx:id="yAxis" side="LEFT" />
         </yAxis>
       </BarChart>
-      <Label layoutX="467.0" layoutY="150.0" text="Find a Specific Player" />
-      <ComboBox fx:id="cbPlayers" layoutX="459.0" layoutY="175.0" prefHeight="18.0" prefWidth="128.0" />
-      <Button fx:id="viewTable" layoutX="468.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="View Table" />
+      <Label layoutX="467.0" layoutY="155.0" text="Find a Specific Player" />
+      <ComboBox fx:id="cbPlayers" layoutX="460.0" layoutY="177.0" prefHeight="18.0" prefWidth="128.0" />
+      <Button fx:id="viewTable" layoutX="467.0" layoutY="450.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="View Table" />
+      <Button fx:id="clearSelection" layoutX="467.0" layoutY="415.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Clear Selection" />
    </children>
 </AnchorPane>

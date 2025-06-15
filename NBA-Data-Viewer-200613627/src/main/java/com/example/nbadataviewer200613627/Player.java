@@ -21,7 +21,7 @@ public class Player {
         Hawks, Heat, Hornets, Jazz, Kings, Knicks,
         Lakers, Magic, Mavericks, Nets, Nuggets, Pacers,
         Pelicans, Pistons, Raptors, Rockets, Sixers, Spurs,
-        Suns, Thunder, Timberwolves, Warriors, Wizards
+        Suns, Thunder, Timberwolves, Trailblazers, Warriors, Wizards
     }
 
     private String playerName;
