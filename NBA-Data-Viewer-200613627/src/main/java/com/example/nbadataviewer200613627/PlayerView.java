@@ -4,9 +4,12 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.chart.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.util.List;
 import java.util.Map;
@@ -88,7 +91,6 @@ public class PlayerView {
             Map.entry(Player.Teams.Jazz, "#F9A01B"),
             Map.entry(Player.Teams.Wizards, "#E31837")
     );
-
 
 
     /* Checks if a specific player is selected, or if none (which represents all) are selected */
@@ -180,6 +182,30 @@ public class PlayerView {
             }
         });
 
+        /* Button listener to switch scenes */
+        viewTable.setOnAction(e->{
+            try {
+                /* Launches new scene */
+                Stage stage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader(LaunchApplication.class.getResource("table-view.fxml"));
+                TableView controller = new TableView();
+                fxmlLoader.setController(controller);
+                Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+
+                /* Styling stage - not centering as table view acts as a secondary window within the flow of the app */
+                stage.setTitle("NBA Stats Table View");
+                stage.setScene(scene);
+                stage.getIcons().add(new Image(getClass().getResourceAsStream("imgs/basketball.png")));
+                stage.setResizable(false);
+                stage.show();
+
+                /* Catches error and prints message */
+            } catch(Exception error){
+                System.err.println("Error found: " + error.getMessage());
+                System.err.println("Error cause: " + error.getCause());
+            }
+        });
+
         cbPlayers.setOnAction(c -> {
             checkboxClear();
         });
@@ -223,10 +249,12 @@ public class PlayerView {
                     });
                 }
 
+                /* Checks for duplicate data entries */
                 if (!barChart.getData().contains(pointsSeries)) {
                     barChart.getData().add(pointsSeries);
                 }
             } else {
+                /* Removes data and updates graph so bar width is reset */
                 pointsSeries.getData().clear();
                 barChart.getData().remove(pointsSeries);
                 updateCategories();

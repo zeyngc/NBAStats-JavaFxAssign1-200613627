@@ -14,7 +14,7 @@ public class LaunchApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(LaunchApplication.class.getResource("player-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 500);
         scene.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
-        stage.setTitle("NBA Stat Viewer");
+        stage.setTitle("NBA Stat Chart View");
         stage.setScene(scene);
         /* Sets icon */
         stage.getIcons().add(new Image(getClass().getResourceAsStream("imgs/basketball.png")));
