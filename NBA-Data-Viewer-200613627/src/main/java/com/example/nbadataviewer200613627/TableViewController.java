@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.control.TableView;
 
@@ -27,6 +29,9 @@ public class TableViewController {
 
     @FXML
     private ComboBox<String> cbPlayerSearch;
+
+    @FXML
+    private ImageView imageView;
 
     List<Player> players = Player.populatePlayerInfo();
 
@@ -60,14 +65,35 @@ public class TableViewController {
         /* If no player is selected, display all */
         if (playerName == null){
             tableView.getItems().addAll(players);
+            imageView.setImage(null);
         } else {
-            /* If a player name is selected - find the one matching based on name + add it to the TableView */
+            /* If a player name is selected - find the image + object matching based on name + add it to the TableView */
             for (Player player : players){
                 if (player.getPlayerName().equals(playerName)) {
                     tableView.getItems().add(player);
+                    loadImage(player.getPlayerName());
                     break;
                 }
             }
+        }
+    }
+
+    /* Method to find player image */
+    private void loadImage(String playerName){
+        try {
+            /* Finds the image based on playerName - replaces underscores in file names with spaces */
+            String imageFileName = playerName.replace(" ", "_") + ".jpg";
+
+            /* Creates filepath with root + the playerName with proper replaced chars */
+            String filePath = "imgs/" + imageFileName;
+            Image image = new Image(getClass().getResourceAsStream(filePath));
+
+            imageView.setImage(image);
+
+            /* Prints error message and sets imageView to null if file not found */
+        } catch (Exception e) {
+            imageView.setImage(null);
+            System.err.println("Error occurred setting player images: " + e.getMessage());
         }
     }
 

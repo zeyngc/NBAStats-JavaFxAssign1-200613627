@@ -105,7 +105,7 @@ public class Player {
     public static List<Player> populatePlayerInfo(){
         List<Player> player = new ArrayList<Player>();
         player.add(new Player("Giannis Antetokounmpo", 30.4, 6.5, 11.9, 60.1, 22.2, Teams.Bucks));
-        player.add(new Player("Zach Lavine", 23.3, 4.2, 4.3, 51.1, 44.6, Teams.Bulls));
+        player.add(new Player("Zach Lavine", 23.3, 4.2, 4.3, 51.1, 44.6, Teams.Kings));
         player.add(new Player("Donovan Mitchell", 24.0, 5.0, 4.5, 44.3, 36.8, Teams.Cavaliers));
         player.add(new Player("Jayson Tatum", 26.8, 6.0, 8.7, 45.2, 34.3, Teams.Celtics));
         player.add(new Player("James Harden", 22.8, 8.7, 5.8, 41.0, 35.2, Teams.Clippers));
