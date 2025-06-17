@@ -33,6 +33,5 @@
       <ComboBox fx:id="cbPlayers" layoutX="460.0" layoutY="177.0" prefHeight="18.0" prefWidth="128.0" />
       <Button fx:id="viewTable" layoutX="467.0" layoutY="450.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="View Table" />
       <Button fx:id="clearSelection" layoutX="467.0" layoutY="415.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Clear Selection" />
-      <ImageView fx:id="imgView" fitHeight="150.0" fitWidth="130.0" layoutX="458.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

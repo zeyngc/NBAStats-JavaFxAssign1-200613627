@@ -92,7 +92,6 @@ public class PlayerView {
             Map.entry(Player.Teams.Wizards, "#E31837")
     );
 
-
     /* Checks if a specific player is selected, or if none (which represents all) are selected */
     private List<Player> filteredPlayers(){
         String selectedPlayer = cbPlayers.getValue();
@@ -219,7 +218,7 @@ public class PlayerView {
                 .map(Player::getPlayerName).toList());
 
         /* BarChart object styling */
-        barChart.setTitle("NBA Stat Viewer");
+        barChart.setTitle("NBA Stats");
         barChart.setAnimated(false);
 
         /* ActionEvents for each CheckBox object */
