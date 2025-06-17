@@ -173,7 +173,7 @@ public class PlayerView {
         clearSelection.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                /* Clears combobox value */
+                /* Clears combo box value */
                 cbPlayers.getSelectionModel().clearSelection();
 
                 /* Method to clear states of items */
@@ -187,11 +187,12 @@ public class PlayerView {
                 /* Launches new scene */
                 Stage stage = new Stage();
                 FXMLLoader fxmlLoader = new FXMLLoader(LaunchApplication.class.getResource("table-view.fxml"));
-                TableView controller = new TableView();
+                TableViewController controller = new TableViewController();
                 fxmlLoader.setController(controller);
-                Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+                Scene scene = new Scene(fxmlLoader.load(), 675, 500);
 
                 /* Styling stage - not centering as table view acts as a secondary window within the flow of the app */
+                scene.getStylesheets().add(getClass().getResource("table-view-style.css").toExternalForm());
                 stage.setTitle("NBA Stats Table View");
                 stage.setScene(scene);
                 stage.getIcons().add(new Image(getClass().getResourceAsStream("imgs/basketball.png")));
@@ -199,7 +200,7 @@ public class PlayerView {
                 stage.show();
 
                 /* Catches error and prints message */
-            } catch(Exception error){
+            } catch (Exception error) {
                 System.err.println("Error found: " + error.getMessage());
                 System.err.println("Error cause: " + error.getCause());
             }

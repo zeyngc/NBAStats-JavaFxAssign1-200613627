@@ -13,7 +13,7 @@ public class LaunchApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LaunchApplication.class.getResource("player-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 500);
-        scene.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("player-view-style.css").toExternalForm());
         stage.setTitle("NBA Stat Chart View");
         stage.setScene(scene);
         /* Sets icon */
