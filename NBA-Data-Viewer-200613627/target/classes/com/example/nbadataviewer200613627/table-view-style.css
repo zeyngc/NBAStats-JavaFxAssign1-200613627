@@ -23,8 +23,3 @@ https://www.pragmaticcoding.ca/javafx/elements/styling-guide-tableView#introduct
     -fx-background-color: transparent;
 }
 
-.combo-box:selected {
-    -fx-background-color: transparent;
-    -fx-text-color: red;
-}
-

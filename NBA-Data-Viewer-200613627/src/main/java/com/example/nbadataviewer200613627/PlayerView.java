@@ -156,6 +156,7 @@ public class PlayerView {
 
     @FXML
     private void initialize(){
+        /* Creates XYChart Series for usage in data plotting */
         pointsSeries = new XYChart.Series<>();
         assistSeries = new XYChart.Series<>();
         reboundsSeries = new XYChart.Series<>();

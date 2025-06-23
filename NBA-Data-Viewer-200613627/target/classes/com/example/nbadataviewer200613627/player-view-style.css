@@ -1,6 +1,8 @@
 .root {
+    font-family:Times New Roman,Times New Roman,serif;
 }
 
 .check-box:selected .mark{
     -fx-background-color: red;
 }
+
