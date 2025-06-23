@@ -1,0 +1,30 @@
+/* Used this website to find information on TableView styling:
+https://www.pragmaticcoding.ca/javafx/elements/styling-guide-tableView#introduction */
+
+.root {
+
+}
+
+.table-view, .table-view .column-drag-header, .table-view .column-resize-line,
+.table-view > .column-header-background > .show-hide-columns-button {
+    -fx-background-color: transparent;
+}
+
+.table-view:focused {
+    -fx-background-color: transparent;
+}
+
+.table-cell {
+    -fx-text-fill: -fx-text-background-color;
+    -fx-padding: 2px;
+}
+
+.combo-box .arrow, .combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box:selected {
+    -fx-background-color: transparent;
+    -fx-text-color: red;
+}
+
